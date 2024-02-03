@@ -14,7 +14,14 @@ public class Crossroad : MonoBehaviour
     public Text playerDialogueText;
     public Text travelerDialogueText;
 
-    private string[] playerLines = {
+    public Text instroctionsInDialogue;
+	public Text instroctionsAfterDialogue;
+
+	public Button button1;
+	public Button button2;
+	public Button button3;
+
+	private string[] playerLines = {
         "Yes, I find myself torn between these three paths. Each one seems fraught with danger, yet filled with promise. How am I to choose?",
         "Please, tell me — what lies ahead on each of these paths? What dangers must I face, and what rewards await me? ",
         "It is a difficult choice indeed. Each path presents its own challenges and rewards, yet only one can lead me closer to the lost kingdom I seek. ",
@@ -37,13 +44,19 @@ public class Crossroad : MonoBehaviour
     {
         playerIcon.SetActive(false);
         travelerIcon.SetActive(false);
-        StartCoroutine(RevealText());
+		instroctionsInDialogue.gameObject.SetActive(false);
+		instroctionsAfterDialogue.gameObject.SetActive(false);
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+        button3.gameObject.SetActive(false);
+		StartCoroutine(RevealText());
     }
 
     void Update()
     {
-        // Check if the introductory text has been fully revealed and spacebar is pressed
-        if (textFullyRevealed && Input.GetKeyDown(KeyCode.Space))
+		instroctionsInDialogue.gameObject.SetActive(true);
+		// Check if the introductory text has been fully revealed and spacebar is pressed
+		if (textFullyRevealed && Input.GetKeyDown(KeyCode.E))
         {
             // Hide the introductory text
             introText.gameObject.SetActive(false);
@@ -52,10 +65,21 @@ public class Crossroad : MonoBehaviour
             playerIcon.SetActive(true);
             travelerIcon.SetActive(true);
             DisplayNextLine();
-
-            // Start dialogue between player and traveler
-            // You can call a method to start the dialogue here
         }
+        if (currentLine == 8)
+        {
+            instroctionsInDialogue.gameObject.SetActive(false);
+            instroctionsAfterDialogue.gameObject.SetActive(true);
+        }
+		if (playersReplics == 4 && travelerReplics == 4 && Input.GetKeyDown(KeyCode.Space))
+        {
+            playerDialogueText.gameObject.SetActive(false);
+            travelerDialogueText.gameObject.SetActive(false);
+            travelerIcon.SetActive(false);
+			button1.gameObject.SetActive(true);
+			button2.gameObject.SetActive(true);
+			button3.gameObject.SetActive(true);
+		}
     }
 
     IEnumerator RevealText()
