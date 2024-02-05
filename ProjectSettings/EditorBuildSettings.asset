@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Crossroads.unity
     guid: 920e4f6328f74dd41ad50c45edbbc95e
+  - enabled: 1
+    path: Assets/Scenes/Ascent.unity
+    guid: fb664ea6c1ec26a4ebe5f3aad201ccf3
+  - enabled: 1
+    path: Assets/Scenes/Ruins.unity
+    guid: 683f4282e24dbc54ab680096a07ecb65
+  - enabled: 1
+    path: Assets/Scenes/NoInfo.unity
+    guid: 91af45883c3ce6c4196bb1e77a147ec2
+  - enabled: 1
+    path: Assets/Scenes/LastDialogue.unity
+    guid: 43857b146dfb31941a29eb39aa03a250
+  - enabled: 1
+    path: Assets/Scenes/2DaysRoad.unity
+    guid: a3823f8be6849454f9877dacbfc648e3
   m_configObjects: {}
