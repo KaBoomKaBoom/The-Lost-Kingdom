@@ -8,6 +8,10 @@ public class Crossroad : MonoBehaviour
     public GameObject playerIcon;
     public GameObject travelerIcon;
 
+    public GameObject backIntro;
+    public GameObject backPlayer;
+    public GameObject backTraveler;
+
     public float revealSpeed = 0.1f;
     private bool textFullyRevealed = false;
 
@@ -32,7 +36,7 @@ public class Crossroad : MonoBehaviour
     private string[] travelerLines = {
         "Ah, young adventurer, it seems you have reached a crossroads in your journey—a moment of decision that will shape the path ahead.",
         "Indeed, the choices we make on our journey can often seem daunting, fraught with uncertainty and doubt. But fear not, for I am here to offer guidance to those who seek it.",
-        "On the left lies the treacherous ascent, a journey that will test your strength and agility as you climb higher into the mist-shrouded peaks. On the right flows the perilous river, its waters swirling with unseen currents and hidden dangers. And straight ahead lies the enigmatic tunnel, a path cloaked in darkness and mystery, where ancient secrets lie waiting to be uncovered. ",
+        "On the left lies the treacherous ascent. On the right flows the perilous river. And straight ahead lies an enigmatic tunnel.",
         "Remember, young adventurer, the path you choose is not just about the destination, but the journey itself. Trust in your instincts, and let the stars guide you on your quest. ",
     };
 
@@ -44,7 +48,9 @@ public class Crossroad : MonoBehaviour
     {
         playerIcon.SetActive(false);
         travelerIcon.SetActive(false);
-		instroctionsInDialogue.gameObject.SetActive(false);
+        backPlayer.SetActive(false);
+        backTraveler.SetActive(false);
+        instroctionsInDialogue.gameObject.SetActive(false);
 		instroctionsAfterDialogue.gameObject.SetActive(false);
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
@@ -60,10 +66,12 @@ public class Crossroad : MonoBehaviour
         {
             // Hide the introductory text
             introText.gameObject.SetActive(false);
-
+            backIntro.SetActive(false);
             // Show character icons
             playerIcon.SetActive(true);
             travelerIcon.SetActive(true);
+            backPlayer.SetActive(true);
+            backTraveler.SetActive(true);
             DisplayNextLine();
         }
         if (currentLine == 8)
@@ -76,7 +84,9 @@ public class Crossroad : MonoBehaviour
             playerDialogueText.gameObject.SetActive(false);
             travelerDialogueText.gameObject.SetActive(false);
             travelerIcon.SetActive(false);
-			button1.gameObject.SetActive(true);
+            backPlayer.SetActive(false);
+            backTraveler.SetActive(false);
+            button1.gameObject.SetActive(true);
 			button2.gameObject.SetActive(true);
 			button3.gameObject.SetActive(true);
 		}
