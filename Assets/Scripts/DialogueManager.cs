@@ -6,6 +6,9 @@ public class Manager : MonoBehaviour
     public Text playerDialogueText;
     public Text travelerDialogueText;
 
+    public Text inDialogue;
+    public Text afterDialogue;
+
     private string[] playerLines = {
         "Excuse me, traveler. I couldn't help but overhear your tales of the lost kingdom. Are they true? Is there truly a realm hidden away, waiting to be discovered?",
         "But why has it remained hidden for so long? If it holds such wealth and power, why has no one found it before?",
@@ -29,15 +32,25 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
+        inDialogue.gameObject.SetActive(false);
+        afterDialogue.gameObject.SetActive(false);
         DisplayNextLine();
     }
 
     void Update()
     {
+        inDialogue.gameObject.SetActive(true);
+
         // Check for player input to advance the dialogue
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             DisplayNextLine();
+        }
+        if (currentLine == 10)
+        {
+            inDialogue.gameObject.SetActive(false);
+            afterDialogue.gameObject.SetActive(true);
+
         }
     }
 
