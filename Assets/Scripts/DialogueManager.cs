@@ -50,7 +50,6 @@ public class Manager : MonoBehaviour
         {
             inDialogue.gameObject.SetActive(false);
             afterDialogue.gameObject.SetActive(true);
-
         }
     }
 
