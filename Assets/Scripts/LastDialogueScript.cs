@@ -19,6 +19,9 @@ public class LastDialogueScript : MonoBehaviour
 	public Text instroctionsInDialogue;
 	public Text instroctionsAfterDialogue;
 
+	public GameObject backDialogue;
+	public GameObject backPlayer;
+	public GameObject backTraveler;
 
 	private string[] playerLines = {
 		"It has been quite the adventure, traveler. I've faced challenges and overcome obstacles, but I fear the true test still lies ahead.?",
@@ -41,11 +44,14 @@ public class LastDialogueScript : MonoBehaviour
 
 	void Start()
 	{
+		backPlayer.SetActive(false);
+		backTraveler.SetActive(false);
 		playerIcon.SetActive(false);
 		travelerIcon.SetActive(false);
 		instroctionsInDialogue.gameObject.SetActive(false);
 		instroctionsAfterDialogue.gameObject.SetActive(false);
 
+		backDialogue.SetActive(true);
 		StartCoroutine(RevealText());
 	}
 
@@ -57,8 +63,10 @@ public class LastDialogueScript : MonoBehaviour
 		{
 			// Hide the introductory text
 			introText.gameObject.SetActive(false);
-
+			backDialogue.SetActive(false);
 			// Show character icons
+			backPlayer.SetActive(true);
+			backTraveler.SetActive(true);
 			playerIcon.SetActive(true);
 			travelerIcon.SetActive(true);
 			DisplayNextLine();
