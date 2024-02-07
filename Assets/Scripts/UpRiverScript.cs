@@ -9,8 +9,8 @@ public class UpRiveScript : MonoBehaviour
     public Text introText1;
     public Text introText2;
     public Text introText3;
+    public GameObject backIntro;
 
-    public GameObject playerIcon;
     public GameObject travelerIcon;
     public Text playerDialogueText;
     public Text travelerDialogueText;
@@ -42,8 +42,8 @@ public class UpRiveScript : MonoBehaviour
 
     void Start()
     {
-        //textQueue.Enqueue(introText2);
-        //textQueue.Enqueue(introText3);
+        backPlayer.SetActive(false);
+        travelerIcon.SetActive(false);
         introText2.gameObject.SetActive(false);
         introText3.gameObject.SetActive(false);
         inIntro.gameObject.SetActive(true);
@@ -57,18 +57,32 @@ public class UpRiveScript : MonoBehaviour
         {
             full = false;
             introText1.gameObject.SetActive(false);
-            //var nextText = textQueue.Dequeue();
             introText2.gameObject.SetActive(true);
             StartCoroutine(RevealText(introText2, 2));
         }
         if (full1 && Input.GetKeyDown(KeyCode.E))
         {
             introText2.gameObject.SetActive(false);
-            //var nextText = textQueue.Dequeue();
+            backIntro.gameObject.SetActive(false);
+            backPlayer.SetActive(true);
+            travelerIcon.SetActive(true);
+            DisplayNextLine();
+        }
+        if (currentLine == playerLines.Length + travelerLines.Length) 
+        {
+            inIntro.gameObject.SetActive(false);
+            afterIntro.gameObject.SetActive(true);
+        }
+        if (currentLine == playerLines.Length + travelerLines.Length && Input.GetKeyDown(KeyCode.Space))
+        {
+            backPlayer.SetActive(false);
+            travelerIcon.SetActive(false);
+            backIntro.SetActive(true);
             introText3.gameObject.SetActive(true);
             StartCoroutine(RevealText(introText3, 3));
             inIntro.gameObject.SetActive(false);
             afterIntro.gameObject.SetActive(true);
+
         }
         if (full2 && Input.GetKeyDown(KeyCode.Space))
         {
@@ -97,6 +111,35 @@ public class UpRiveScript : MonoBehaviour
         else if (n == 2) full1 = true;
         else full2 = true;
     }
+
+    void DisplayNextLine()
+    {
+        // Check if there are still lines left to display
+        if (currentLine < playerLines.Length + travelerLines.Length && playersReplics == travelerReplics)
+        {
+            playerDialogueText.gameObject.SetActive(false);
+            travelerDialogueText.gameObject.SetActive(true);
+            travelerDialogueText.text = travelerLines[travelerReplics];
+            travelerReplics++;
+        }
+        else if (currentLine < travelerLines.Length + playerLines.Length && travelerReplics > playersReplics)
+        {
+            travelerDialogueText.gameObject.SetActive(false);
+            playerDialogueText.gameObject.SetActive(true);
+            playerDialogueText.text = playerLines[playersReplics];
+            playersReplics++;
+        }
+        else
+        {
+            // Dialogue is complete, transition to next scene or return to main scene
+            // For example, you can use SceneManager.LoadScene() to load the next scene
+            Debug.Log("Dialogue complete!");
+            return;
+        }
+
+        currentLine++;
+    }
+
 }
 
 
