@@ -61,4 +61,8 @@ public class Days2RoadScript : MonoBehaviour
 
 	}
 
+	void OnButtonClick() 
+	{
+		
+	}
 }

@@ -80,4 +80,9 @@ public class InTunnelScript : MonoBehaviour
 		else full2 = true;
 	}
 
+	public void OnMButtonClick()
+	{
+		SaveManager.Save(4, 7, 8);
+	}
+
 }

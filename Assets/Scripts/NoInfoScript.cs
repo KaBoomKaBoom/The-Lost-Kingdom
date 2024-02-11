@@ -79,5 +79,9 @@ public class NoInfoScript : MonoBehaviour
 		else if (n == 2) full1 = true;
 		else full2 = true;
 	}
+	public void onButtonClick()
+	{
+		SaveManager.Save(7, 3, 5);
+	}
 }
 

@@ -13,7 +13,9 @@ public class RuinsTrigger : MonoBehaviour
 			SceneManager.LoadScene("LastDialogue");
 
 		}
-
-
+	}
+    public void onButtonClick() 
+    {
+		SaveManager.Save(8, 6, 5);
 	}
 }

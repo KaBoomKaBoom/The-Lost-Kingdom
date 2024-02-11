@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class UpRiveScript : MonoBehaviour
 {
@@ -140,6 +141,11 @@ public class UpRiveScript : MonoBehaviour
         currentLine++;
     }
 
+	public void OnButtonClick()
+	{
+
+		SaveManager.Save(7, 9, 5);
+	}
 }
 
 

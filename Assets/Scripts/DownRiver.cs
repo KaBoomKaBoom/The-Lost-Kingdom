@@ -75,5 +75,9 @@ public class DownRiver : MonoBehaviour
         else if (n == 2) full1 = true;
         else full2 = true;
     }
+	public void OnButtonClick()
+	{
 
+		SaveManager.Save(4, 7, 6);
+	}
 }

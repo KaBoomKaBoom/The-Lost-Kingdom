@@ -76,6 +76,7 @@ public class TunnelScript : MonoBehaviour
 	public void OnOption1Click()
 	{
 		Debug.Log("Button 1 clicked!");
+		SaveManager.Save(4, 7, 8);
 		SceneManager.LoadScene("InTunnel"); // Load Scene1
 	}
 
@@ -83,8 +84,12 @@ public class TunnelScript : MonoBehaviour
 	public void OnOption2Click()
 	{
 		Debug.Log("Button 2 clicked!");
-		SceneManager.LoadScene("DownRiver"); // Load Scene2
+		SaveManager.Save(2, 3, 2);
+		SceneManager.LoadScene("NoTunnel"); // Load Scene2
 	}
-
+	public void OnOptionClick()
+	{
+		SaveManager.Save(2, 4, 5);
+	}
 
 }

@@ -7,6 +7,8 @@ public class AscentOptions : MonoBehaviour
 	public void OnButton1Click()
 	{
 		Debug.Log("Button 1 clicked!");
+		SaveManager.Save(8, 6, 5);
+
 		SceneManager.LoadScene("Ruins"); // Load Scene1
 	}
 
@@ -14,7 +16,14 @@ public class AscentOptions : MonoBehaviour
 	public void OnButton2Click()
 	{
 		Debug.Log("Button 2 clicked!");
+		SaveManager.Save(7, 3, 5);
+
 		SceneManager.LoadScene("NoInfo"); // Load Scene2
+	}
+	public void OnButtonClick() 
+	{
+		SaveManager.Save(6, 3, 3);
+
 	}
 }
 

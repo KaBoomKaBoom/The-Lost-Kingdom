@@ -143,7 +143,10 @@ public class NoTunnelScript : MonoBehaviour
 
 		currentLine++;
 	}
-
+	public void OnButtonClick()
+	{
+		SaveManager.Save(2, 3, 2);
+	}
 }
 
 

@@ -127,5 +127,9 @@ public class LastDialogueScript : MonoBehaviour
 
 		currentLine++;
 	}
+	public void onButtonClick()
+	{
+		SaveManager.Save(8, 6, 5);
+	}
 }
 
