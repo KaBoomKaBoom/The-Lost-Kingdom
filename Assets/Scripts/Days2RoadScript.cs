@@ -13,9 +13,12 @@ public class Days2RoadScript : MonoBehaviour
 	public float revealSpeed = 0.1f;
 	private bool textFullyRevealed = false;
 
+	public Image road;
+	public Image castle;
 
 	void Start()
 	{
+		castle.gameObject.SetActive(false);
 		descrText.gameObject.SetActive(false);
 		instruction.gameObject.SetActive(false);
 		StartCoroutine(RevealText(roadText));
@@ -30,6 +33,8 @@ public class Days2RoadScript : MonoBehaviour
 			textFullyRevealed = false;
 			roadText.gameObject.SetActive(false);
 			instructionInText.gameObject.SetActive(false);
+			road.gameObject.SetActive(false);
+			castle.gameObject.SetActive(true);
 			descrText.gameObject.SetActive(true);
 			StartCoroutine(RevealText(descrText));
 			instruction.gameObject.SetActive(true);
