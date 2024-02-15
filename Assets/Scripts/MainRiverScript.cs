@@ -16,8 +16,13 @@ public class MainRiverScrip : MonoBehaviour
 	public bool full = false;
 
 	public Text after;
+
+	public AudioSource audio1, audio2;
+
 	void Start()
 	{
+		audio1.Play();
+		audio2.Stop();
 		after.gameObject.SetActive(false);
 		button1.SetActive(false);
 		button2.SetActive(false);
@@ -35,6 +40,8 @@ public class MainRiverScrip : MonoBehaviour
 			after.gameObject.SetActive(false);
 			introText.gameObject.SetActive(false);
 			backIntro.SetActive(false);
+			audio1.Stop();
+			audio2.Play();
 			button1.SetActive(true);
 			button2.SetActive(true);
 		}

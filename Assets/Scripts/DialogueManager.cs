@@ -32,7 +32,7 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
-        inDialogue.gameObject.SetActive(false);
+		inDialogue.gameObject.SetActive(false);
         afterDialogue.gameObject.SetActive(false);
         DisplayNextLine();
     }

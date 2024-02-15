@@ -15,9 +15,14 @@ public class AscentScript : MonoBehaviour
 
 	public bool full = false;
 
+	public AudioSource audio1;
+	public AudioSource audio2;
+
 	public Text after;
 	void Start()
 	{
+		audio1.Play();
+		audio2.Stop();
 		after.gameObject.SetActive(false);
 		button1.SetActive(false);
 		button2.SetActive(false);
@@ -34,6 +39,8 @@ public class AscentScript : MonoBehaviour
 			after.gameObject.SetActive(false);
 			introText.gameObject.SetActive(false);
 			backIntro.SetActive(false);
+			audio1.Stop();
+			audio2.Play();
 			button1 .SetActive(true);
 			button2 .SetActive(true);
 		}

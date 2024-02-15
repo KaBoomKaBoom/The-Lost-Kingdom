@@ -44,8 +44,13 @@ public class Crossroad : MonoBehaviour
     private int playersReplics = 0;
     private int travelerReplics = 0;
 
-    void Start()
+    public AudioSource audio1 ,audio2 ;
+
+
+	void Start()
     {
+        audio1.Play();
+        audio2.Stop();
         playerIcon.SetActive(false);
         travelerIcon.SetActive(false);
         backPlayer.SetActive(false);
@@ -86,6 +91,8 @@ public class Crossroad : MonoBehaviour
             travelerIcon.SetActive(false);
             backPlayer.SetActive(false);
             backTraveler.SetActive(false);
+            audio1.Stop();
+            audio2.Play();
             button1.gameObject.SetActive(true);
             button2.gameObject.SetActive(true);
             button3.gameObject.SetActive(true);
