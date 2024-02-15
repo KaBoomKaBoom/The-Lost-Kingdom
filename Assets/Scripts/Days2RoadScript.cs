@@ -15,6 +15,8 @@ public class Days2RoadScript : MonoBehaviour
 
 	public Image road;
 	public Image castle;
+	
+	public GameData gameData = SaveManager.LoadGame();
 
 	void Start()
 	{
@@ -42,7 +44,19 @@ public class Days2RoadScript : MonoBehaviour
 		}
 		if (textFullyRevealed && Input.GetKeyDown(KeyCode.Space))
 		{
-			SceneManager.LoadScene("TreasureChest");
+			if ((gameData.physicalStrength == 8 && gameData.emotionalStrength == 6 && gameData.knowledge == 5) ||
+				(gameData.physicalStrength == 4 && gameData.emotionalStrength == 7 && gameData.knowledge == 8))
+			{
+				SceneManager.LoadScene("GoodEnding");
+			}
+			else if (gameData.physicalStrength == 4 && gameData.emotionalStrength == 7 && gameData.knowledge == 6)
+			{
+				SceneManager.LoadScene("BadEnding");
+			}
+			else 
+			{
+				SceneManager.LoadScene("SoSoEnding");
+			}
 
 		}
 	}
