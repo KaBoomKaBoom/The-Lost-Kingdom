@@ -10,12 +10,12 @@ public class SaveManager : MonoBehaviour
 	public static void SaveGame(GameData data)
 	{
 		string json = JsonUtility.ToJson(data);
-		File.WriteAllText("save.json", json);
+		File.WriteAllText(@"Assets\save.json", json);
 	}
 
 	public static GameData LoadGame()
 	{
-		string path = "save.json";
+		string path = @"Assets\save.json";
 		if (File.Exists(path))
 		{
 			string json = File.ReadAllText(path);
