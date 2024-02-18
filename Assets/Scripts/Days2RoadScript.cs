@@ -15,16 +15,19 @@ public class Days2RoadScript : MonoBehaviour
 
 	public Image road;
 	public Image castle;
-	
-	public GameData gameData = SaveManager.LoadGame();
+	public Image player;
+
+	public GameData gameData ;
 
 	void Start()
 	{
 		castle.gameObject.SetActive(false);
 		descrText.gameObject.SetActive(false);
 		instruction.gameObject.SetActive(false);
+		gameData = SaveManager.LoadGame();
 		StartCoroutine(RevealText(roadText));
 		instructionInText.gameObject.SetActive(true);
+
 	}
 
 	private void Update()
@@ -37,6 +40,7 @@ public class Days2RoadScript : MonoBehaviour
 			instructionInText.gameObject.SetActive(false);
 			road.gameObject.SetActive(false);
 			castle.gameObject.SetActive(true);
+			player.gameObject.SetActive(false);
 			descrText.gameObject.SetActive(true);
 			StartCoroutine(RevealText(descrText));
 			instruction.gameObject.SetActive(true);
@@ -80,8 +84,4 @@ public class Days2RoadScript : MonoBehaviour
 
 	}
 
-	void OnButtonClick() 
-	{
-		
-	}
 }

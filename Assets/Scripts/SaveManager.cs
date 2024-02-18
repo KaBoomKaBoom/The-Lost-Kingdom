@@ -49,10 +49,10 @@ public class SaveManager : MonoBehaviour
 		GameData data = new GameData();
 		data.sceneName = SceneManager.GetActiveScene().name; ;
 		// Set player characteristics
-		data.physicalStrength += a;
-		data.emotionalStrength += b;
-		data.knowledge += c;
-		SaveManager.SaveGame(data);
+		data.physicalStrength = a;
+		data.emotionalStrength = b;
+		data.knowledge = c;
+		SaveGame(data);
 		Debug.Log("Saved");
 	}
 	public static string Load()
