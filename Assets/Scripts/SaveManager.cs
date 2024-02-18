@@ -9,29 +9,34 @@ public class SaveManager : MonoBehaviour
 {
 	public static void SaveGame(GameData data)
 	{
-		string json = JsonUtility.ToJson(data);
-		File.WriteAllText(@"Assets\save.json", json);
+		PlayerPrefs.SetString("SceneName", data.sceneName);
+		PlayerPrefs.SetInt("Characteristic1", data.physicalStrength);
+		PlayerPrefs.SetInt("Characteristic2", data.emotionalStrength);
+		PlayerPrefs.SetInt("Characteristic3", data.knowledge);
+		PlayerPrefs.Save();
 	}
 
 	public static GameData LoadGame()
 	{
-		string path = @"Assets\save.json";
-		if (File.Exists(path))
+		if (PlayerPrefs.HasKey("SceneName"))
 		{
-			string json = File.ReadAllText(path);
+			GameData data = new GameData();
+			data.sceneName = PlayerPrefs.GetString("SceneName");
+			data.physicalStrength = PlayerPrefs.GetInt("Characteristic1");
+			data.emotionalStrength = PlayerPrefs.GetInt("Characteristic2");
+			data.knowledge = PlayerPrefs.GetInt("Characteristic3");
 
-			return JsonUtility.FromJson<GameData>(json);
+			return data;
 		}
 		else
 		{
-			Debug.LogWarning("No save file found.");
+			Debug.LogError("No saved player data found.");
 			return null;
 		}
 	}
 	public static void FirstSave(int a, int b, int c)
 	{
 		GameData data = new GameData();
-		data.saveDate = System.DateTime.Now.ToString();
 		data.sceneName = "Village";
 		// Set player characteristics
 		data.physicalStrength =a;
@@ -42,7 +47,6 @@ public class SaveManager : MonoBehaviour
 	public static void Save(int a, int b, int c)
 	{
 		GameData data = new GameData();
-		data.saveDate = System.DateTime.Now.ToString();
 		data.sceneName = SceneManager.GetActiveScene().name; ;
 		// Set player characteristics
 		data.physicalStrength += a;
@@ -53,7 +57,7 @@ public class SaveManager : MonoBehaviour
 	}
 	public static string Load()
 	{
-		GameData data = SaveManager.LoadGame();
+		GameData data = LoadGame();
 		if (data != null)
 		{
 			Debug.Log("Current scene: " + data.sceneName);

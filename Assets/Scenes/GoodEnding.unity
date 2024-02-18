@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introText: {fileID: 1790421410}
   introText2: {fileID: 1082227445}
-  revealSpeed: 0.001
+  revealSpeed: 0.009
   backIntro: {fileID: 2105266808}
   full1: 0
   full2: 0

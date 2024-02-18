@@ -7,7 +7,6 @@ using System.Text;
 [System.Serializable]
 public class GameData
 {
-		public string saveDate;
 		public string sceneName;
 		public int physicalStrength;
 		public int emotionalStrength;

@@ -215,7 +215,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.2
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -364,8 +364,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.6212, y: 0.00006866455}
-  m_SizeDelta: {x: 1313.3959, y: 247.91}
+  m_AnchoredPosition: {x: 2.0538, y: 26}
+  m_SizeDelta: {x: 1265.5, y: 247.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269315215
 MonoBehaviour:
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 120eecf362029754bbef1d7b7fc4d5da, type: 3}
-    m_FontSize: 15
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -400,15 +400,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "In the heart of a sleepy village, nestled amidst towering mountains and
-    whispering forests, a young adventurer's tale begins. You, the player, have heard
-    whispers carried on the winds of fortune, whispers that speak of a kingdom lost
-    to time, hidden away in the depths of an untamed wilderness. \r\n\rAs the sun
-    sets, casting golden hues across cobblestone streets and thatched rooftops, you
-    stand at the threshold of adventure. The air crackles with anticipation, a palpable
-    energy that ignites the flames of your curiosity and ambition. Tonight, the village
-    hums with stories of a forgotten realm, a realm said to hold treasures beyond
-    imagination, guarded by secrets as ancient as the earth itself. "
+  m_Text: '
+
+    In a tranquil village surrounded by towering mountains and serene
+    forests, a young adventurer''s journey begins. You, the player, have caught wind
+    of rumors hinting at a lost kingdom concealed within a wild wilderness. As twilight
+    descends, painting cobblestone streets and thatched roofs with golden light,
+    you stand ready for adventure. The air is charged with excitement, fueling your
+    curiosity and drive. Tonight, the village buzzes with tales of a forgotten realm,
+    rumored to harbor unimaginable treasures and ancient secrets.'
 --- !u!222 &269315216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introText1: {fileID: 269315215}
   introText2: {fileID: 1946117852}
-  revealSpeed: 0.04
+  revealSpeed: 0.009
   full: 0
   inIntro: {fileID: 1107378545}
   afterIntro: {fileID: 418781015}
@@ -1070,8 +1070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000020981, y: 7.1741}
-  m_SizeDelta: {x: 1269.6112, y: 254.07}
+  m_AnchoredPosition: {x: 2.0538, y: 22.92001}
+  m_SizeDelta: {x: 1307.1964, y: 254.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946117852
 MonoBehaviour:
@@ -1095,7 +1095,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 120eecf362029754bbef1d7b7fc4d5da, type: 3}
-    m_FontSize: 15
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1106,16 +1106,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: "In the flickering glow of a tavern's hearth, you listen intently to the
-    tales spun by travelers from distant lands. They speak of crumbling ruins adorned
-    with jewels that gleam like stars, of artifacts imbued with the power of forgotten
-    gods, and of a kingdom lost to the annals of history, waiting to be rediscovered
-    by those brave enough to seek it. \r\n\rAmong the gathered crowd, a figure cloaked
-    in mystery catches your eye\u2014a weathered traveler with eyes that sparkle
-    with wisdom beyond their years. Their voice is soft yet commanding, weaving a
-    tapestry of adventure and peril that beckons you forth into the unknown. They
-    speak of trials that await, of challenges that will test your strength and resolve,
-    but also of the rewards that await the bold and the brave. "
+  m_Text: "\r\nIn a tavern's flickering warmth, you absorb the tales spun by travelers
+    recounting jewels adorning ancient ruins, artifacts holding forgotten gods' power,
+    and a kingdom lost to history\u2014awaiting rediscovery by the courageous. Amid
+    the crowd, a mysterious figure, weathered and wise-eyed, captures your attention.
+    Their soft yet compelling voice crafts a narrative of adventure and peril, enticing
+    you into the unknown. They foretell trials and challenges testing your strength
+    and resolve, yet promise rewarding outcomes for the bold and brave."
 --- !u!222 &1946117853
 CanvasRenderer:
   m_ObjectHideFlags: 0
