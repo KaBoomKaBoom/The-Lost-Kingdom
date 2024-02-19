@@ -24,8 +24,8 @@ public class TunnelScript : MonoBehaviour
 	public AudioSource audio1, audio2;
 	void Start()
 	{
-		audio1.Play();
-		audio2.Stop();
+		//audio1.Play();
+		//audio2.Stop();
 		inIntro.gameObject.SetActive(false);
 		introText2.gameObject.SetActive(false);
 		button1.SetActive(false);
@@ -52,8 +52,8 @@ public class TunnelScript : MonoBehaviour
 			introText2.gameObject.SetActive(false);
 			inIntro.gameObject.SetActive(false);	
 			backIntro.SetActive(false);
-			audio1.Stop();
-			audio2.Play();
+			//audio1.Stop();
+			//audio2.Play();
 			button1.SetActive(true);
 			button2.SetActive(true);
 		}

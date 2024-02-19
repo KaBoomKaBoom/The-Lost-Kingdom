@@ -36,11 +36,11 @@ EditorBuildSettings:
     path: Assets/Scenes/UpRiver.unity
     guid: 0e2203f37b8a74340a356ea5a910e8ef
   - enabled: 1
+    path: Assets/Scenes/Tunell.unity
+    guid: 347d560b68e42074bba7ec0f7fef6ef6
+  - enabled: 1
     path: Assets/Scenes/DownRiver.unity
     guid: 4dbb8495f1f3c434ca9a3c2bfc2363cc
-  - enabled: 1
-    path: Assets/Scenes/Tunnel.unity
-    guid: 347d560b68e42074bba7ec0f7fef6ef6
   - enabled: 1
     path: Assets/Scenes/InTunnel.unity
     guid: 8d5c2f46cdecd69468da0f499943bf4d
